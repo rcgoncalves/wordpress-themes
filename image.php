@@ -10,7 +10,7 @@ get_header();
 		<article id="post-<?php the_ID(); ?>" <?php post_class('image-attachment'); ?>>
 			<header class="entry-header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
-				<h2 class="entry-date"><?php rcg_entry_date(); ?></h2>
+				<h2 class="entry-date"><?php rcg_gray_entry_date(); ?></h2>
 			</header>
 			<div class="entry-content">
 				<div class="entry-attachment">
@@ -41,7 +41,7 @@ get_header();
 				</div>
 				<footer class="entry-meta">
 					<?php
-					rcg_entry_meta();
+					rcg_gray_entry_meta();
 					edit_post_link(__('Edit', 'rcg-gray'), ' <span class="edit-link">', '</span>');
 					if(comments_open()) :
 					?>

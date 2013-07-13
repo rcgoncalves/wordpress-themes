@@ -18,7 +18,7 @@
 		<?php
 		endif;
 		?>
-		<h2 class="entry-date"><?php rcg_entry_date(); ?></h2>
+		<h2 class="entry-date"><?php rcg_gray_entry_date(); ?></h2>
 	</header>
 	<?php
 	if(is_search()) :
@@ -43,7 +43,7 @@
 		?>
 		<footer class="entry-meta">
 			<?php
-			rcg_entry_meta();
+			rcg_gray_entry_meta();
 			edit_post_link(__('Edit', 'rcg-gray'), ' <span class="edit-link">', '</span>');
 			if(comments_open()) :
 			?>
