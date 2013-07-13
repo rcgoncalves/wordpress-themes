@@ -9,9 +9,9 @@ get_header();
 			get_template_part('content', get_post_format());
 			?>
 			<nav class="nav-single">
-				<h3 class="assistive-text"><?php _e('Post navigation', 'rcg-gray'); ?></h3>
-				<span class="nav-previous"><?php previous_post_link('%link', _x('&larr;', 'Previous post link', 'rcg-gray') . ' %title'); ?></span>
-				<span class="nav-next"><?php next_post_link('%link', '%title ' . _x('&rarr;', 'Next post link', 'rcg-gray')); ?></span>
+				<h3 class="assistive-text"><?php _e('Post navigation', 'rcg-forest'); ?></h3>
+				<span class="nav-previous"><?php previous_post_link('%link', _x('&larr;', 'Previous post link', 'rcg-forest') . ' %title'); ?></span>
+				<span class="nav-next"><?php next_post_link('%link', '%title ' . _x('&rarr;', 'Next post link', 'rcg-forest')); ?></span>
 			</nav>
 			<?php
 			comments_template('', true);

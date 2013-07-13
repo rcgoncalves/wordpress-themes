@@ -9,7 +9,7 @@ if(post_password_required()) {
 	?>
 		<h2 class="comments-title">
 			<?php
-			printf(_n('One reply', '%1$s replies on &ldquo;%2$s&rdquo;', get_comments_number(), 'rcg-gray'),
+			printf(_n('One reply', '%1$s replies on &ldquo;%2$s&rdquo;', get_comments_number(), 'rcg-forest'),
 				number_format_i18n(get_comments_number()),
 				get_the_title()
 			);
@@ -22,16 +22,16 @@ if(post_password_required()) {
 		if(get_comment_pages_count() > 1 && get_option('page_comments')) :
 		?>
 			<nav id="comment-nav-below" class="navigation" role="navigation">
-				<h1 class="assistive-text section-heading"><?php _e('Comment navigation', 'rcg-gray'); ?></h1>
-				<div class="nav-previous"><?php previous_comments_link(__('&larr; Older Comments', 'rcg-gray')); ?></div>
-				<div class="nav-next"><?php next_comments_link(__('Newer Comments &rarr;', 'rcg-gray')); ?></div>
+				<h1 class="assistive-text section-heading"><?php _e('Comment navigation', 'rcg-forest'); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link(__('&larr; Older Comments', 'rcg-forest')); ?></div>
+				<div class="nav-next"><?php next_comments_link(__('Newer Comments &rarr;', 'rcg-forest')); ?></div>
 			</nav>
 		<?php
 		endif;
 		if(!comments_open() && get_comments_number()) :
 		?>
 			<div id="comments-closed">
-				<h3 class="nocomments"><?php _e('Comments are closed.', 'rcg-gray'); ?></h3>
+				<h3 class="nocomments"><?php _e('Comments are closed.', 'rcg-forest'); ?></h3>
 			</div>
 		<?php
 		endif;

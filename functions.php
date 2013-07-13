@@ -3,55 +3,55 @@
 if (!isset($content_width)) {
 	$content_width = 625;
 }
-function rcg_gray_content_width() {
+function rcg_forest_content_width() {
 	if(is_page_template('page-templates/full-width.php') || is_attachment() || !is_active_sidebar('sidebar')) {
 		global $content_width;
 		$content_width = 960;
 	}
 }
-add_action('template_redirect', 'rcg_gray_content_width');
+add_action('template_redirect', 'rcg_forest_content_width');
 
 // Basic setup
-function rcg_gray_setup() {
-	load_theme_textdomain('rcg-gray', get_template_directory() . '/languages');
+function rcg_forest_setup() {
+	load_theme_textdomain('rcg-forest', get_template_directory() . '/languages');
 	add_editor_style();
 	add_theme_support('automatic-feed-links');
-	register_nav_menu('primary', __('Primary Menu', 'rcg-gray'));
+	register_nav_menu('primary', __('Primary Menu', 'rcg-forest'));
 	add_theme_support('custom-background', array('default-color' => 'e6e6e6'));
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(200, 200);
 }
-add_action('after_setup_theme', 'rcg_gray_setup');
+add_action('after_setup_theme', 'rcg_forest_setup');
 
 // Scripts and styles
-function rcg_gray_scripts_styles() {
+function rcg_forest_scripts_styles() {
 	global $wp_styles, $wp_scripts;
 	if(is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
-	wp_enqueue_script('rcg-gray-navigation', get_template_directory_uri() . '/inc/navigation.js', array(), '20130708', true);
-	wp_enqueue_style('rcg-gray-style', get_stylesheet_uri());
-	wp_enqueue_style('rcg-gray-ie', get_template_directory_uri() . '/inc/ie.css', array('rcg-gray-style'), '20130708');
-	$wp_styles->add_data('rcg-gray-ie', 'conditional', 'lt IE 9');
+	wp_enqueue_script('rcg-forest-navigation', get_template_directory_uri() . '/inc/navigation.js', array(), '20130708', true);
+	wp_enqueue_style('rcg-forest-style', get_stylesheet_uri());
+	wp_enqueue_style('rcg-forest-ie', get_template_directory_uri() . '/inc/ie.css', array('rcg-forest-style'), '20130708');
+	$wp_styles->add_data('rcg-forest-ie', 'conditional', 'lt IE 9');
 }
-add_action('wp_enqueue_scripts', 'rcg_gray_scripts_styles');
+add_action('wp_enqueue_scripts', 'rcg_forest_scripts_styles');
 
 // Title
-function rcg_gray_wp_title($title, $sep) {
+function rcg_forest_wp_title($title, $sep) {
 	global $paged, $page;
 	$title = get_bloginfo('name') . " $sep " . $title;
 	if($paged >= 2 || $page >= 2) {
-		$title .= sprintf(__('Page %s', 'rcg-gray'), max($paged, $page));
+		$title .= sprintf(__('Page %s', 'rcg-forest'), max($paged, $page));
 	}
 	else {
 		$title = preg_replace('#\\s\\|\\s$#', '', $title);
 	}
 	return $title;
 }
-add_filter('wp_title', 'rcg_gray_wp_title', 10, 2);
+add_filter('wp_title', 'rcg_forest_wp_title', 10, 2);
 
 // Body classes
-function rcg_gray_body_class($classes) {
+function rcg_forest_body_class($classes) {
 	if(!is_active_sidebar('sidebar') || is_page_template('page-templates/full-width.php')) {
 		$classes[] = 'full-width';
 	}
@@ -60,103 +60,103 @@ function rcg_gray_body_class($classes) {
 	}
 	return $classes;
 }
-add_filter('body_class', 'rcg_gray_body_class');
+add_filter('body_class', 'rcg_forest_body_class');
 
 
 // Widgets
 // Global sidebar
 // Global footer (x3)
 // Front page footer (x3)
-function rcg_gray_widgets_init() {
+function rcg_forest_widgets_init() {
 	register_sidebar(array(
-		'name' => __('Sidebar', 'rcg-gray'),
+		'name' => __('Sidebar', 'rcg-forest'),
 		'id' => 'sidebar',
-		'description' => __('Appears on posts and pages sidebar, except when using a custom page template.', 'rcg-gray'),
+		'description' => __('Appears on posts and pages sidebar, except when using a custom page template.', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('First Footer Widget', 'rcg-gray'),
+		'name' => __('First Footer Widget', 'rcg-forest'),
 		'id' => 'footer-l',
-		'description' => __('Appears on posts and pages footer (left), except when using Front Page template.', 'rcg-gray'),
+		'description' => __('Appears on posts and pages footer (left), except when using Front Page template.', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('Second Footer Widget', 'rcg-gray'),
+		'name' => __('Second Footer Widget', 'rcg-forest'),
 		'id' => 'footer-c',
-		'description' => __('Appears on posts and pages footer (center), except when using Front Page template.', 'rcg-gray'),
+		'description' => __('Appears on posts and pages footer (center), except when using Front Page template.', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('Third Footer Widget', 'rcg-gray'),
+		'name' => __('Third Footer Widget', 'rcg-forest'),
 		'id' => 'footer-r',
-		'description' => __('Appears on posts and pages footer (right), except when using Front Page template.', 'rcg-gray'),
+		'description' => __('Appears on posts and pages footer (right), except when using Front Page template.', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('First Front Page Footer Widget', 'rcg-gray'),
+		'name' => __('First Front Page Footer Widget', 'rcg-forest'),
 		'id' => 'front-footer-l',
-		'description' => __('Appears when using Front Page template on footer (left).', 'rcg-gray'),
+		'description' => __('Appears when using Front Page template on footer (left).', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('Second Front Page Footer Widget', 'rcg-gray'),
+		'name' => __('Second Front Page Footer Widget', 'rcg-forest'),
 		'id' => 'front-footer-c',
-		'description' => __('Appears when using Front Page template on footer (center).', 'rcg-gray'),
+		'description' => __('Appears when using Front Page template on footer (center).', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __('Third Front Page Footer Widget', 'rcg-gray'),
+		'name' => __('Third Front Page Footer Widget', 'rcg-forest'),
 		'id' => 'front-footer-r',
-		'description' => __('Appears when using Front Page template on footer (right).', 'rcg-gray'),
+		'description' => __('Appears when using Front Page template on footer (right).', 'rcg-forest'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 }
-add_action('widgets_init', 'rcg_gray_widgets_init');
+add_action('widgets_init', 'rcg_forest_widgets_init');
 
 
 // Custom header
-function rcg_gray_custom_header_setup() {
+function rcg_forest_custom_header_setup() {
 	$args = array(
 		'default-text-color'     => 'ddd',
-		'default-image'          => '',
+		'default-image'          => get_template_directory_uri() . '/inc/forest.png',
 		'height'                 => 150,
 		'width'                  => 1040,
 		'max-width'              => 1040,
 		'flex-height'            => true,
 		'flex-width'             => true,
 		'random-default'         => false,
-		'wp-head-callback'       => 'rcg_gray_header_style',
-		'admin-head-callback'    => 'rcg_gray_admin_style',
-		'admin-preview-callback' => 'rcg_gray_admin_html',
+		'wp-head-callback'       => 'rcg_forest_header_style',
+		'admin-head-callback'    => 'rcg_forest_admin_style',
+		'admin-preview-callback' => 'rcg_forest_admin_html',
 	);
 
 	add_theme_support('custom-header', $args);
 }
-add_action('after_setup_theme', 'rcg_gray_custom_header_setup');
+add_action('after_setup_theme', 'rcg_forest_custom_header_setup');
 
 // Frontend style
-function rcg_gray_header_style() {
+function rcg_forest_header_style() {
 	$text_color = get_header_textcolor();
 
 	if($text_color == get_theme_support('custom-header', 'default-text-color')) {
@@ -188,7 +188,7 @@ function rcg_gray_header_style() {
 }
 
 // Backend style
-function rcg_gray_admin_style() {
+function rcg_forest_admin_style() {
 	$text_color = get_header_textcolor();
 	?>
 	<style type="text/css">
@@ -243,7 +243,7 @@ function rcg_gray_admin_style() {
 }
 
 // Backend HTML
-function rcg_gray_admin_html() {
+function rcg_forest_admin_html() {
 ?>
 	<div id="top">
 		<div id="top1">
@@ -270,16 +270,16 @@ if(!function_exists('rcg_entry_meta')) :
 function rcg_entry_meta() {
 	$author = sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-		esc_attr(sprintf(__('View all posts by %s', 'rcg-gray'), get_the_author())),
+		esc_attr(sprintf(__('View all posts by %s', 'rcg-forest'), get_the_author())),
 		get_the_author()
 	);
-	$categories_list = get_the_category_list(__(', ', 'rcg-gray'));
-	$tags_list = get_the_tag_list('', __(', ', 'rcg-gray'));
+	$categories_list = get_the_category_list(__(', ', 'rcg-forest'));
+	$tags_list = get_the_tag_list('', __(', ', 'rcg-forest'));
 
 	if($categories_list) {
-		$utility_text = __('Published by <span class="by-author">%1$s</span>, in %2$s.', 'rcg-gray');
+		$utility_text = __('Published by <span class="by-author">%1$s</span>, in %2$s.', 'rcg-forest');
 	} else {
-		$utility_text = __('Published by <span class="by-author">%1$s</span>.', 'rcg-gray');
+		$utility_text = __('Published by <span class="by-author">%1$s</span>.', 'rcg-forest');
 	}
 	if(is_single() && $tags_list) {
 		$utility_text .= ' Tagged with %3$s.';

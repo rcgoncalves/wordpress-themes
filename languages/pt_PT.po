@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RCG Gray 2.0\n"
+"Project-Id-Version: RCG Forest 2.0\n"
 "Report-Msgid-Bugs-To: rcgoncalves.pt@gmail.com\n"
-"POT-Creation-Date: 2013-07-10 00:40+0100\n"
+"POT-Creation-Date: 2013-07-11 23:42+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rui Carlos Gonçalves <rcgoncalves.pt@gmail.com>\n"
 "Language-Team: Rui Carlos Gonçalves <rcgoncalves.pt@gmail.com>\n"
@@ -151,8 +151,8 @@ msgid "Proudly powered by WordPress"
 msgstr "Criado com WordPress"
 
 #: footer.php:12
-msgid "Theme RCG Gray"
-msgstr "Tema RCG Gray"
+msgid "Theme RCG Forest"
+msgstr "Tema RCG Forest"
 
 #: functions.php:19
 msgid "Primary Menu"

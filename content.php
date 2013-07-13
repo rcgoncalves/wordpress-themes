@@ -8,12 +8,12 @@
 		else :
 			if(!is_search()) :
 			?>
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'rcg-gray'), the_title_attribute('echo=0'))); ?>" rel="bookmark" class="post-thumbnail"><?php the_post_thumbnail();?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'rcg-forest'), the_title_attribute('echo=0'))); ?>" rel="bookmark" class="post-thumbnail"><?php the_post_thumbnail();?></a>
 			<?php
 			endif;
 			?>
 			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'rcg-gray'), the_title_attribute('echo=0'))); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'rcg-forest'), the_title_attribute('echo=0'))); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 		<?php
 		endif;
@@ -31,12 +31,12 @@
 	?>
 		<div class="entry-content">
 			<?php
-			the_content(__('Continue reading &rarr;', 'rcg-gray'));
+			the_content(__('Continue reading &rarr;', 'rcg-forest'));
 			?>
 		</div>
 		<?
 		if(is_single()) :
-			wp_link_pages(array('before' =>'<div class="page-links">' . __('Pages:', 'rcg-gray'), 'after' => '</div>'));
+			wp_link_pages(array('before' =>'<div class="page-links">' . __('Pages:', 'rcg-forest'), 'after' => '</div>'));
 			?>
 		<?php
 		endif;
@@ -44,11 +44,11 @@
 		<footer class="entry-meta">
 			<?php
 			rcg_entry_meta();
-			edit_post_link(__('Edit', 'rcg-gray'), ' <span class="edit-link">', '</span>');
+			edit_post_link(__('Edit', 'rcg-forest'), ' <span class="edit-link">', '</span>');
 			if(comments_open()) :
 			?>
 				<span class="comments-link">
-					<?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rcg-gray') . '</span>', __('1 Reply', 'rcg-gray'), __('% Replies', 'rcg-gray')); ?>
+					<?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rcg-forest') . '</span>', __('1 Reply', 'rcg-forest'), __('% Replies', 'rcg-forest')); ?>
 				</span>
 			<?php
 			endif;

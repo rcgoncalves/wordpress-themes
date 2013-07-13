@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RCG Gray 2.0\n"
+"Project-Id-Version: RCG Forest 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
@@ -149,7 +149,7 @@ msgid "Proudly powered by WordPress"
 msgstr ""
 
 #: footer.php:12
-msgid "Theme RCG Gray"
+msgid "Theme RCG Forest"
 msgstr ""
 
 #: functions.php:19

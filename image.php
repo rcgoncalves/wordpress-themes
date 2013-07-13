@@ -42,11 +42,11 @@ get_header();
 				<footer class="entry-meta">
 					<?php
 					rcg_entry_meta();
-					edit_post_link(__('Edit', 'rcg-gray'), ' <span class="edit-link">', '</span>');
+					edit_post_link(__('Edit', 'rcg-forest'), ' <span class="edit-link">', '</span>');
 					if(comments_open()) :
 					?>
 						<span class="comments-link">
-							<?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rcg-gray') . '</span>', __('1 Reply', 'rcg-gray'), __('% Replies', 'rcg-gray')); ?>
+							<?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rcg-forest') . '</span>', __('1 Reply', 'rcg-forest'), __('% Replies', 'rcg-forest')); ?>
 						</span>
 					<?php
 					endif;
@@ -54,8 +54,8 @@ get_header();
 				</footer>
 			</article>
 			<nav id="image-navigation" class="navigation" role="navigation">
-				<span class="nav-previous"><?php previous_image_link(false, __('&larr; Previous', 'rcg-gray')); ?></span>
-				<span class="nav-next"><?php next_image_link(false, __('Next &rarr;', 'rcg-gray')); ?></span>
+				<span class="nav-previous"><?php previous_image_link(false, __('&larr; Previous', 'rcg-forest')); ?></span>
+				<span class="nav-next"><?php next_image_link(false, __('Next &rarr;', 'rcg-forest')); ?></span>
 			</nav>
 			<?php
 			comments_template();
