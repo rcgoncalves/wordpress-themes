@@ -678,10 +678,15 @@ footer[role="contentinfo"] a:hover {
 	font-weight: normal;
 }
 .entry-header .entry-date {
-	color: #757575;
 	font-size: 12px;
 	font-size: 0.8571428571rem;
 	font-weight: normal;
+}
+.entry-header .entry-date a {
+	color: #757575;
+}
+.entry-header .entry-date a:hover {
+	color: #21759b;
 }
 .entry-meta .comments-link {
 	float: right;
