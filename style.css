@@ -390,11 +390,13 @@ img.wp-smiley,
 .nav-previous {
 	float: left;
 	width: 50%;
+	word-wrap: break-word;
 }
 .nav-next {
 	float: right;
 	text-align: right;
 	width: 50%;
+	word-wrap: break-word;
 }
 .nav-single + .comments-area,
 #comment-nav-above {
