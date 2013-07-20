@@ -4,7 +4,7 @@ Theme URI: http://rcgoncalves.pt/project/rcg-gray/
 Author: Rui Carlos Gonçalves
 Author URI: http://rcgoncalves.pt/
 Description: A simple light theme.  Based on RCG Forest and TwentyTwelve themes.
-Version: 2.0.1
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, blue, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -176,6 +176,9 @@ textarea {
 	overflow: auto;
 	vertical-align: top;
 }
+select {
+	max-width:100%;
+}
 
 /* Reset non-text input types */
 input[type="checkbox"],
@@ -306,6 +309,7 @@ img.wp-post-image {
 }
 .wp-caption img {
 	display: block;
+	clear:both;
 	max-width: 100%;
 	margin: 0 auto 4px!important;
 }
@@ -464,6 +468,7 @@ a:hover {
 #secondary.widget-area {
 	margin: 24px 0 0;
 	margin: 1.714285714rem 0 0;
+	overflow:hidden;
 }
 
 /* Header */
@@ -604,6 +609,7 @@ img.header-image {
 }
 #secondary-footer.widget-area {
 	width: auto;
+	overflow:hidden;
 }
 .footer-widgets  {
 	width:32%;
