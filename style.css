@@ -846,6 +846,9 @@ footer[role="contentinfo"] a:hover {
 .entry-content pre code,
 .comment-body pre code {
 	display: block;
+	background: none;
+	border: none;
+	padding: 0;
 }
 .entry-content abbr,
 .comment-body abbr,
