@@ -1061,6 +1061,7 @@ body.attachment .entry-attachment .attachment {
 .comment.bypostauthor .comment-author cite.fn {
 	font-weight: bold;
 }
+.pingback .reply,
 .comment .reply {
 	text-align: right;
 }
