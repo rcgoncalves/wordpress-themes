@@ -19,6 +19,7 @@ function rcg_gray_setup() {
 	register_nav_menu('primary', __('Primary Menu', 'rcg-gray'));
 	add_theme_support('custom-background', array('default-color' => 'e6e6e6'));
 	add_theme_support('post-thumbnails');
+	add_theme_support( 'title-tag' );
 	set_post_thumbnail_size(200, 200);
 }
 add_action('after_setup_theme', 'rcg_gray_setup');
