@@ -37,20 +37,6 @@ function rcg_gray_scripts_styles() {
 }
 add_action('wp_enqueue_scripts', 'rcg_gray_scripts_styles');
 
-// Title
-function rcg_gray_wp_title($title, $sep) {
-	global $paged, $page;
-	$title = get_bloginfo('name') . " $sep " . $title;
-	if($paged >= 2 || $page >= 2) {
-		$title .= sprintf(__('Page %s', 'rcg-gray'), max($paged, $page));
-	}
-	else {
-		$title = preg_replace('#\\s\\|\\s$#', '', $title);
-	}
-	return $title;
-}
-add_filter('wp_title', 'rcg_gray_wp_title', 10, 2);
-
 // Body classes
 function rcg_gray_body_class($classes) {
 	if(!is_active_sidebar('sidebar-1') || is_page_template('page-templates/full-width.php')) {
