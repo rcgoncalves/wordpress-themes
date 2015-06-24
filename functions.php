@@ -19,6 +19,7 @@ function rcg_gray_setup() {
 	register_nav_menu('primary', __('Primary Menu', 'rcg-gray'));
 	add_theme_support('custom-background', array('default-color' => 'e6e6e6'));
 	add_theme_support('post-thumbnails');
+	add_theme_support( 'title-tag' );
 	set_post_thumbnail_size(200, 200);
 }
 add_action('after_setup_theme', 'rcg_gray_setup');
@@ -35,20 +36,6 @@ function rcg_gray_scripts_styles() {
 	$wp_styles->add_data('rcg-gray-ie', 'conditional', 'lt IE 9');
 }
 add_action('wp_enqueue_scripts', 'rcg_gray_scripts_styles');
-
-// Title
-function rcg_gray_wp_title($title, $sep) {
-	global $paged, $page;
-	$title = get_bloginfo('name') . " $sep " . $title;
-	if($paged >= 2 || $page >= 2) {
-		$title .= sprintf(__('Page %s', 'rcg-gray'), max($paged, $page));
-	}
-	else {
-		$title = preg_replace('#\\s\\|\\s$#', '', $title);
-	}
-	return $title;
-}
-add_filter('wp_title', 'rcg_gray_wp_title', 10, 2);
 
 // Body classes
 function rcg_gray_body_class($classes) {
