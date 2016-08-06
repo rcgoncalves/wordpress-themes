@@ -254,6 +254,9 @@ li.bypostauthor cite {
 	box-shadow: none;
 	padding: 2px 5px;
 }
+li.bypostauthor cite a {
+	color: #fff;
+}
 
 /* Responsive images */
 .entry-content img,
@@ -1057,9 +1060,6 @@ body.attachment .entry-attachment .attachment {
 	line-height: 1.714285714;
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
-}
-.comment.bypostauthor .comment-author cite.fn {
-	font-weight: bold;
 }
 .pingback .reply,
 .comment .reply {
